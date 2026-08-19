@@ -23,6 +23,8 @@ const (
 	NetworkErrCode Code = 1002 // 网络错误	Network communication failure.
 )
 
+// webServe 是一个模拟的 Web 处理函数:根据不同的输入返回对应的业务码和提示信息
+// webServe simulates a Web handler: it returns different business codes and messages based on the input.
 func webServe(name string) (Code, string) {
 	if name == "1" {
 		return ServiceErrCode.GetCodeMsg()
@@ -34,4 +36,6 @@ func webServe(name string) (Code, string) {
 }
 
 func main() {
+	// 这里省略了实际调用,主要用于展示自定义类型在业务码设计中的用法
+	// The actual call is omitted here; the file mainly demonstrates how custom types are used for business codes.
 }

@@ -16,9 +16,9 @@ type User struct {
 }
 
 func main() {
-	user := User{Name: "WHM", Age: 18, Password: "123456"}
-	fmt.Println(user)
-	byteDtae, _ := json.Marshal(user)
-	fmt.Println(string(byteDtae))
+	user := User{Name: "WHM", Age: 18, Password: "123456"} // 初始化结构体实例	Initialize the struct instance.
+	fmt.Println(user)                                       // 直接打印结构体	Print the struct directly.
+	byteDtae, _ := json.Marshal(user)                       // 将结构体序列化为 JSON	Marshal the struct to JSON.
+	fmt.Println(string(byteDtae))                           // 输出 JSON:注意 password 被忽略	Name:注意 JSON 中不含 password,因为有 json:"-" 标签。
 	fmt.Printf(string(byteDtae))
 }

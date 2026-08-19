@@ -21,10 +21,10 @@ func (s Student) Study() {
 }
 
 func main() {
-	s1 := Student{
+	s1 := Student{ // 使用键值对方式初始化结构体	Initialize the struct with key-value pairs.
 		Class: Class{Name: "classroom1"},
 		Name:  "WHM"}
-	fmt.Printf("%T\n", s1)
-	s1.Study()
+	fmt.Printf("%T\n", s1) // 打印结构体类型	Print the struct's type.
+	s1.Study()             // 调用结构体方法	Call the struct's method.
 
 }

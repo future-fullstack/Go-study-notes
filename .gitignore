@@ -1,9 +1,6 @@
 # 排除实验文件夹
 Whm's Wonder Lab/
 
-# 排除所有习题集
-**/习题集.go
-
 # 本地配置（不推送）
 .claude/
 .idea/

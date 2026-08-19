@@ -23,20 +23,25 @@ const mycode MyCode = 1
 const myaliascode MyAliasCode = 1
 
 func main() {
-	age := 1
+	age := 1 // 一个 int 类型的普通变量	An ordinary int variable.
 
 	// 自定义类型
-	// 不报错
+	// Custom type.
+	// 不报错:自定义类型与整型字面量比较,无需转换(字面量会隐式匹配)
+	// No error: comparing a custom type with an integer literal needs no conversion (literals match implicitly).
 	if mycode == 1 {
 		return
 	}
-	// 报错,需要类型转换才能比较
+	// 报错,需要类型转换才能比较:自定义类型与 int 变量是不同静态类型
+	// Error, needs a type conversion: a custom type and an int variable are distinct static types.
 	if mycode == age {
 		return
 	}
 
 	// 类型别名
-	// 都不报错
+	// Type alias.
+	// 都不报错:类型别名本质就是原类型(int),与 int 变量可直接比较
+	// No error in either: a type alias is essentially the original type (int), comparable with int directly.
 	if myaliascode == 1 {
 		return
 	}

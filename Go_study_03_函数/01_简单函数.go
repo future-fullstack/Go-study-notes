@@ -4,14 +4,17 @@ import (
 	"fmt"
 )
 
+// Hello 是一个最简单的函数:无参数、无返回值	Hello is the simplest function: no params, no return value.
 func Hello() {
 	fmt.Println("Hello")
 }
 
+// param1 演示带一个参数的函数	param1 demonstrates a function with one parameter.
 func param1(id int) {
 	fmt.Println(id)
 }
 
+// param2 演示带多个不同类型参数的函数	param2 demonstrates a function with multiple parameters of different types.
 func param2(id int, username string) {
 	fmt.Println(id, username)
 }
@@ -22,6 +25,7 @@ func param3(id, age int) {
 	fmt.Println(id, age)
 }
 
+// add1 通过传入切片来计算总和	 add1 computes the sum via a slice parameter.
 // 法 1
 // Method 1
 func add1(numberList []int) {
@@ -32,6 +36,8 @@ func add1(numberList []int) {
 	fmt.Println(sum)
 }
 
+// add2 使用可变参数(...int),可以接收任意数量的 int,更灵活
+// add2 uses variadic parameters (...int) to accept any number of ints, which is more flexible.
 // 法2
 // Method 2
 func add2(numberList ...int) {
@@ -60,7 +66,6 @@ func r2() int {
 func r3() (int, bool) {
 	return 1, false
 }
-
 // 提前声明要返回的值的类型
 // Named return value
 func r4() (ok bool, num int) {
@@ -108,21 +113,27 @@ func main() {
 	var num int
 	fmt.Scan(&num)
 
+	// 将多个函数放入 map,用函数作为值,实现按需调用(函数也是类型)
+	// Store functions as map values to dispatch by key (functions are first-class values).
 	var m = map[int]func(){
 		1: food,
 		2: nofoof,
 	}
 
+	// 取出并调用对应的函数;ok 为 false 说明该键不存在
+	// Fetch and call the matching function; ok is false if the key does not exist.
 	fun, ok := m[num]
 	if ok {
 		fun()
 	}
 }
 
+// food 根据用户选择提示去吃饭	 food suggests going to eat.
 func food() {
 	fmt.Println("快去吃饭")
 }
 
+// nofoof 根据用户选择提示去散步	 nofoof suggests taking a walk.
 func nofoof() {
 	fmt.Println("快去散步")
 }
