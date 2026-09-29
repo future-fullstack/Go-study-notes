@@ -26,7 +26,7 @@
 | 09 | 反射与 ORM 案例 | ✅ |
 | 10 | TCP / HTTP 网络编程 | ✅ |
 | 11 | Build 与可执行程序 | ✅ |
-| 12 | Web Spider / Gin | 🚧 施工中 |
+| 12 | Web Spider：静态页面、翻页与动态数据提取 | 🚧 施工中 |
 
 ## 目录导航
 
@@ -48,6 +48,8 @@ StartingGo/
 ```
 
 ## 代码风格
+
+爬虫部分的文件用途、运行方式与当前草稿问题见 [Go 爬虫学习导航](Go_study_12_webSpider/README.md)。
 
 学习代码统一使用 **中文 + English 双语注释**：
 
